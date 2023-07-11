@@ -17,6 +17,6 @@ extension Container {
     var characterRepository: Factory<CharactersRepository> { self { CharactersRepository() }}
      
      // ViewModels
-    var charactersVM: Factory<CharactersListViewModel> { self { CharactersListViewModel() }}
+    var mainVM: Factory<MainViewModel> { self { MainViewModel() }}
 }
 

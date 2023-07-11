@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CharacterSpecies: Hashable, Identifiable, CaseIterable {
+enum CharacterSpecies: CharactersFilterProtocol {
    
     case human
     case alien

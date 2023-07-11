@@ -40,7 +40,3 @@ struct ErrorView: View {
         }
     }
 }
-
-/*#Preview {
- ErrorView()
- }*/

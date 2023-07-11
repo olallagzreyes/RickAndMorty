@@ -8,5 +8,6 @@
 import Foundation
 
 protocol CharactersRepositoryProtocol: HttpClient {
-    func getAllCharacters(page: Int, parameters: [String:String]) async -> Result<CharactersDTO, ApiError>
+    func getAllCharacters(page: Int) async -> Result<CharactersDTO, ApiError>
+    func getFilteredCharacters(page: Int, parameters: [String:String]) async -> Result<CharactersDTO, ApiError>
 }

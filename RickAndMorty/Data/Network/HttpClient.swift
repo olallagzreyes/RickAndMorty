@@ -49,7 +49,7 @@ extension HttpClient {
                     return .failure(.decode)
                 }
                 // Transform into a JSON to read it as a log
-              /*  if let json = try? JSONSerialization.jsonObject(with: result.data, options: .mutableContainers) {
+               /* if let json = try? JSONSerialization.jsonObject(with: result.data, options: .mutableContainers) {
                     Log.d(tag: "BODY RESPONSE", message: (String(describing: json)))
                 }*/
                 return .success(decodedResponse)

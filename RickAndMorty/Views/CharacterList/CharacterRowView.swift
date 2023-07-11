@@ -2,7 +2,7 @@
 //  CharacterRowView.swift
 //  RickAndMorty
 //
-//  Created by Olalla Gómez Reyes on 27/6/23.
+//  Created by Olalla Gómez Reyes on 22/6/23.
 //
 
 import SwiftUI
@@ -32,8 +32,6 @@ struct CharacterRowView: View {
                             ProgressView()
                                 .progressViewStyle(CircularProgressViewStyle(tint: .blue))
                     @unknown default:
-                        // AsyncImagePhase is not marked as @frozen.
-                        // We need to support new cases in the future.
                         Image(systemName: "questionmark")
                     }
                     }

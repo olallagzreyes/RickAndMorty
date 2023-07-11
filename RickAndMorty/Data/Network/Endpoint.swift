@@ -32,7 +32,7 @@ extension Endpoint {
         var urlComponents = URLComponents()
         urlComponents.scheme = scheme
         urlComponents.host = host
-        urlComponents.path = path
+        urlComponents.path = path.addingPercentEncoding(withAllowedCharacters: .urlQueryAllowed) ?? ""
         urlComponents.queryItems = parameters
     
         return urlComponents.url

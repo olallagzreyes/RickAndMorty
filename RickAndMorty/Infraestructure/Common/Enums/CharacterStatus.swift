@@ -7,7 +7,7 @@
 
 import Foundation
 
-enum CharacterStatus: Hashable, CaseIterable, Identifiable {
+enum CharacterStatus: CharactersFilterProtocol {
     case alive
     case dead
     case unknown

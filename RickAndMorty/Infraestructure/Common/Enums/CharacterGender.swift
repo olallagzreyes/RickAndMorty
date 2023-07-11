@@ -8,7 +8,7 @@
 import Foundation
 
 
-enum CharacterGender: Hashable, Identifiable, CaseIterable {
+enum CharacterGender: CharactersFilterProtocol {
     case female
     case male
     case unknown

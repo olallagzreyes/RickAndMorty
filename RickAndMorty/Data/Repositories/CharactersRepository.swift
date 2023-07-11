@@ -9,7 +9,11 @@ import Foundation
 
 class CharactersRepository: CharactersRepositoryProtocol {
     
-    func getAllCharacters(page: Int, parameters: [String:String]) async -> Result<CharactersDTO, ApiError> {
-        return await sendRequest(endpoint: CharactersEndpoints.getAllCharacters(page: page, parameters: parameters), responseModel: CharactersDTO.self)
+    func getAllCharacters(page: Int) async -> Result<CharactersDTO, ApiError> {
+        return await sendRequest(endpoint: CharactersEndpoints.getAllCharacters(page: page), responseModel: CharactersDTO.self)
+    }
+    
+    func getFilteredCharacters(page: Int, parameters: [String:String]) async -> Result<CharactersDTO, ApiError> {
+        return await sendRequest(endpoint: CharactersEndpoints.getFilteredCharacters(page: page, parameters: parameters), responseModel: CharactersDTO.self)
     }
 }

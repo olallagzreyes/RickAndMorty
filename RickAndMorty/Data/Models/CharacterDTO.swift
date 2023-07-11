@@ -18,7 +18,7 @@ struct CharacterDTO: Codable, Identifiable {
     let origin: Origin
     let characterLocation: CharacterLocation
     let imageUrl: String
-    let episodes: [String]
+    let episode: [String]
     let url: String
     let created: String
     
@@ -26,7 +26,7 @@ struct CharacterDTO: Codable, Identifiable {
         case id, name, status, species, type, gender, origin, url, created
         case characterLocation = "location"
         case imageUrl = "image"
-        case episodes = "episode"
+        case episode = "episode"
     }
     
     init(from decoder: Decoder) throws {
@@ -40,13 +40,13 @@ struct CharacterDTO: Codable, Identifiable {
         origin = try values.decode(Origin.self, forKey: .origin)
         characterLocation = try values.decode(CharacterLocation.self, forKey: .characterLocation)
         imageUrl = try values.decode(String.self, forKey: .imageUrl)
-        episodes = try values.decode([String].self, forKey: .episodes)
+        episode = try values.decode([String].self, forKey: .episode)
         url = try values.decode(String.self, forKey: .url)
         created = try values.decode(String.self, forKey: .created)
     }
     
     func toDomain() -> RMCharacter {
-        return RMCharacter(id: id, name: name, status: CharacterStatus(value: status) ?? .unknown, specie: CharacterSpecies(value: species) ?? .alien, type: type, gender: CharacterGender(value: gender) ?? .unknown, origin: origin.name, location: characterLocation.name, imageUrl: imageUrl, episodes: episodes, url: url)
+        return RMCharacter(id: id, name: name, status: CharacterStatus(value: status) ?? .unknown, specie: CharacterSpecies(value: species) ?? .alien, type: type, gender: CharacterGender(value: gender) ?? .unknown, origin: origin.name, location: characterLocation.name, imageUrl: imageUrl, episodes: episode, url: url)
     }
 }
 
